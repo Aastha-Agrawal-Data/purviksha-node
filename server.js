@@ -30,6 +30,15 @@ app.use(express.json())
 // Make io accessible inside controllers
 app.set('io', io)
 
+// Routes
+const triageRoutes = require('./src/routes/triageRoutes')
+const patientRoutes = require('./src/routes/patientRoutes')
+const hospitalRoutes = require('./src/routes/hospitalRoutes')
+
+app.use('/api/triage', triageRoutes)
+app.use('/api/patients', patientRoutes)
+app.use('/api/hospitals', hospitalRoutes)
+
 // Health check
 app.get('/', (req, res) => {
   res.json({ message: 'Purviksha API is running' })
