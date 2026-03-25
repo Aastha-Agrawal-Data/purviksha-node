@@ -49,6 +49,14 @@ const triageRecordSchema = new mongoose.Schema({
     enum: ['ALERT', 'VOICE', 'PAIN', 'UNRESPONSIVE'],
     required: true
   },
+  vulnerable_population: {
+  type: Boolean,
+  default: false
+  },
+  total_score: {
+  type: Number,
+  default: 0
+  },
 
   // Fast track
   fast_track: {
