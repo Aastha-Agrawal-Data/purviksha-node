@@ -18,13 +18,13 @@ const httpServer = http.createServer(app)
 // 4. Attach Socket.io to HTTP server
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.CLIENT_URL,
+    origin: "*",
     methods: ['GET', 'POST', 'PATCH']
   }
 })
 
 // Middleware
-app.use(cors({ origin: process.env.CLIENT_URL }))
+app.use(cors())
 app.use(express.json())
 
 // Make io accessible inside controllers

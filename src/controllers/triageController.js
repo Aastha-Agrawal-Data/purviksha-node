@@ -1,6 +1,8 @@
 const TriageRecord = require('../models/TriageRecord')
 const Response = require('../models/Response')
 const Patient = require('../models/Patient')
+const Ambulance = require('../models/Ambulance')
+const Hospital = require('../models/Hospital')
 const { calculateTriage } = require('../services/triageEngine')
 
 // POST /api/triage — Submit new triage
