@@ -20,5 +20,15 @@ router.get('/', async (req, res) => {
     res.status(500).json({ success: false, error: error.message })
   }
 })
-
+router.delete('/:id', async (req, res) => {
+  try {
+    const ambulance = await Ambulance.findByIdAndDelete(req.params.id)
+    if (!ambulance) {
+      return res.status(404).json({ success: false, message: 'Ambulance not found' })
+    }
+    res.status(200).json({ success: true, message: 'Ambulance deleted' })
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message })
+  }
+})
 module.exports = router
