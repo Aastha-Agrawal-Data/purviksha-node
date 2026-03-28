@@ -34,10 +34,12 @@ app.set('io', io)
 const triageRoutes = require('./src/routes/triageRoutes')
 const patientRoutes = require('./src/routes/patientRoutes')
 const hospitalRoutes = require('./src/routes/hospitalRoutes')
+const ambulanceRoutes = require('./src/routes/ambulanceRoutes')
 
 app.use('/api/triage', triageRoutes)
 app.use('/api/patients', patientRoutes)
 app.use('/api/hospitals', hospitalRoutes)
+app.use('/api/ambulances', ambulanceRoutes)
 
 // Health check
 app.get('/', (req, res) => {
